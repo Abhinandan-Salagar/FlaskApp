@@ -37,10 +37,10 @@ def predict():
     output=model.predict([[age,gender,rest_cp,rest_bp,cholesterol,fast_bloodsugar,rest_ecg,stress_HR,	Exercise_cp,STdepression_Exerc,	STpeak_exerc,coloured_vessels,thalassmia]])
 
     if output[0]==0:
-        print("person has no disease")
+        message="person has no disease"
     else:
-        print("person has no disease")
-    return render_template("predict.html")
+        message="person has no disease"
+    return render_template("predict.html",message=message)
 
-if __name__==__main__:
+if __name__=="__main__":
     app.run(debug=True)
